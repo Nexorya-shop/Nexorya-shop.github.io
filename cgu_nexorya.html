@@ -8,234 +8,79 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
     :root {
-      --bg:        #0e0f13;
-      --surface:   #16181f;
-      --border:    #262933;
-      --accent:    #5865f2;
-      --accent-dim:#3b4299;
-      --text:      #d4d6e0;
-      --muted:     #6b7080;
-      --heading:   #f0f1f5;
-      --white:     #ffffff;
+      --bg: #0e0f13; --surface: #16181f; --border: #262933;
+      --accent: #5865f2; --accent-dim: #3b4299;
+      --text: #d4d6e0; --muted: #6b7080; --heading: #f0f1f5;
     }
-
-    body {
-      background: var(--bg);
-      color: var(--text);
-      font-family: 'Inter', sans-serif;
-      font-size: 15px;
-      line-height: 1.75;
-      min-height: 100vh;
-    }
-
-    /* ── Header ── */
-    header {
-      border-bottom: 1px solid var(--border);
-      padding: 28px 0 24px;
-      text-align: center;
-    }
-    .badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: var(--accent-dim);
-      color: #c7cdf8;
-      font-size: 11px;
-      font-weight: 600;
-      letter-spacing: .08em;
-      text-transform: uppercase;
-      padding: 4px 12px;
-      border-radius: 99px;
-      margin-bottom: 16px;
-    }
-    header h1 {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: clamp(26px, 5vw, 38px);
-      color: var(--heading);
-      letter-spacing: -.02em;
-    }
+    body { background: var(--bg); color: var(--text); font-family: 'Inter', sans-serif; font-size: 15px; line-height: 1.75; min-height: 100vh; }
+    header { border-bottom: 1px solid var(--border); padding: 28px 0 24px; text-align: center; }
+    .badge { display: inline-flex; align-items: center; gap: 8px; background: var(--accent-dim); color: #c7cdf8; font-size: 11px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; padding: 4px 12px; border-radius: 99px; margin-bottom: 16px; }
+    header h1 { font-family: 'Space Grotesk', sans-serif; font-size: clamp(26px, 5vw, 38px); color: var(--heading); letter-spacing: -.02em; }
     header h1 span { color: var(--accent); }
-    .meta {
-      margin-top: 10px;
-      font-size: 13px;
-      color: var(--muted);
-    }
-
-    /* ── Layout ── */
-    main {
-      max-width: 780px;
-      margin: 0 auto;
-      padding: 56px 24px 80px;
-    }
-
-    /* ── Sections ── */
-    section {
-      margin-bottom: 48px;
-    }
-    section h2 {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: 17px;
-      font-weight: 700;
-      color: var(--heading);
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      margin-bottom: 16px;
-    }
-    .num {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 28px;
-      height: 28px;
-      border-radius: 8px;
-      background: var(--accent);
-      color: #fff;
-      font-size: 12px;
-      font-weight: 700;
-      flex-shrink: 0;
-    }
-    section p {
-      margin-bottom: 12px;
-    }
+    .meta { margin-top: 10px; font-size: 13px; color: var(--muted); }
+    main { max-width: 780px; margin: 0 auto; padding: 56px 24px 80px; }
+    section { margin-bottom: 48px; }
+    section h2 { font-family: 'Space Grotesk', sans-serif; font-size: 17px; font-weight: 700; color: var(--heading); display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
+    .num { display: inline-flex; align-items: center; justify-content: center; width: 28px; height: 28px; border-radius: 8px; background: var(--accent); color: #fff; font-size: 12px; font-weight: 700; flex-shrink: 0; }
+    section p { margin-bottom: 12px; }
     section p:last-child { margin-bottom: 0; }
-
-    h3 {
-      font-size: 14px;
-      font-weight: 600;
-      color: var(--heading);
-      margin: 18px 0 8px;
-    }
-
-    ul {
-      list-style: none;
-      padding-left: 4px;
-    }
-    ul li {
-      padding: 4px 0 4px 20px;
-      position: relative;
-      color: var(--text);
-    }
-    ul li::before {
-      content: '';
-      position: absolute;
-      left: 0;
-      top: 13px;
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      background: var(--accent);
-    }
-
-    /* ── Tableau ── */
-    .table-wrap {
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      overflow: hidden;
-      margin: 16px 0;
-    }
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      font-size: 14px;
-    }
-    thead tr {
-      background: var(--surface);
-    }
-    th {
-      padding: 12px 16px;
-      text-align: left;
-      font-size: 11px;
-      font-weight: 600;
-      letter-spacing: .07em;
-      text-transform: uppercase;
-      color: var(--muted);
-    }
-    td {
-      padding: 12px 16px;
-      border-top: 1px solid var(--border);
-      color: var(--text);
-    }
+    h3 { font-size: 14px; font-weight: 600; color: var(--heading); margin: 18px 0 8px; }
+    ul { list-style: none; padding-left: 4px; }
+    ul li { padding: 4px 0 4px 20px; position: relative; color: var(--text); }
+    ul li::before { content: ''; position: absolute; left: 0; top: 13px; width: 6px; height: 6px; border-radius: 50%; background: var(--accent); }
+    .table-wrap { border: 1px solid var(--border); border-radius: 10px; overflow: hidden; margin: 16px 0; }
+    table { width: 100%; border-collapse: collapse; font-size: 14px; }
+    thead tr { background: var(--surface); }
+    th { padding: 12px 16px; text-align: left; font-size: 11px; font-weight: 600; letter-spacing: .07em; text-transform: uppercase; color: var(--muted); }
+    td { padding: 12px 16px; border-top: 1px solid var(--border); color: var(--text); }
     .tier { font-weight: 600; color: var(--heading); }
     .price { color: var(--accent); font-weight: 600; }
-
-    /* ── Callout ── */
-    .callout {
-      background: var(--surface);
-      border-left: 3px solid var(--accent);
-      border-radius: 0 8px 8px 0;
-      padding: 14px 18px;
-      font-size: 14px;
-      color: #a8acca;
-      margin: 16px 0;
-    }
-
-    /* ── Divider ── */
-    hr {
-      border: none;
-      border-top: 1px solid var(--border);
-      margin: 0 0 48px;
-    }
-
-    /* ── Footer ── */
-    footer {
-      border-top: 1px solid var(--border);
-      text-align: center;
-      padding: 28px 24px;
-      font-size: 13px;
-      color: var(--muted);
-    }
+    .callout { background: var(--surface); border-left: 3px solid var(--accent); border-radius: 0 8px 8px 0; padding: 14px 18px; font-size: 14px; color: #a8acca; margin: 16px 0; }
+    hr { border: none; border-top: 1px solid var(--border); margin: 0 0 48px; }
+    footer { border-top: 1px solid var(--border); text-align: center; padding: 28px 24px; font-size: 13px; color: var(--muted); }
     footer a { color: var(--accent); text-decoration: none; }
+    .lang-btn { position: fixed; bottom: 24px; right: 24px; background: var(--surface); border: 1px solid var(--border); border-radius: 99px; padding: 8px 16px; display: flex; align-items: center; gap: 8px; cursor: pointer; font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 600; color: var(--heading); box-shadow: 0 4px 20px rgba(0,0,0,.4); transition: border-color .15s, transform .15s; user-select: none; }
+    .lang-btn:hover { border-color: var(--accent); transform: translateY(-1px); }
+    .lang-pill { background: var(--accent); color: #fff; border-radius: 99px; padding: 2px 8px; font-size: 11px; font-weight: 700; }
   </style>
 </head>
 <body>
 
 <header>
-  <div class="badge">⚖ Document légal</div>
-  <h1>Conditions Générales d'<span>Utilisation</span></h1>
-  <p class="meta">Serveur SHOP · Nexorya Bot · Dernière mise à jour : juin 2026</p>
+  <div class="badge" id="h-badge"></div>
+  <h1 id="h-title"></h1>
+  <p class="meta" id="h-meta"></p>
 </header>
 
 <main>
+  <section>
+    <h2><span class="num">1</span> <span id="s1-title"></span></h2>
+    <p id="s1-p1"></p>
+    <p id="s1-p2"></p>
+  </section><hr>
 
   <section>
-    <h2><span class="num">1</span> Objet et acceptation</h2>
-    <p>Les présentes Conditions Générales d'Utilisation (CGU) régissent l'accès et l'utilisation du serveur Discord <strong>SHOP</strong> ainsi que de ses services numériques automatisés, opérés via le bot <strong>Nexorya</strong>.</p>
-    <p>En rejoignant le serveur ou en effectuant un achat, l'utilisateur reconnaît avoir lu et accepté l'intégralité des présentes CGU. L'ignorance des règles ne peut être invoquée comme défense.</p>
-  </section>
-  <hr>
+    <h2><span class="num">2</span> <span id="s2-title"></span></h2>
+    <h3 id="s2-h1"></h3>
+    <p id="s2-p1"></p>
+    <h3 id="s2-h2"></h3>
+    <p id="s2-p2"></p>
+  </section><hr>
 
   <section>
-    <h2><span class="num">2</span> Accès au service</h2>
-    <h3>2.1 Âge requis</h3>
-    <p>L'accès au serveur SHOP est strictement réservé aux utilisateurs âgés de <strong>16 ans ou plus</strong>. Tout utilisateur dont l'âge est inférieur à cette limite sera exclu définitivement et sans préavis.</p>
-    <h3>2.2 Compte Discord</h3>
-    <p>L'utilisation du service nécessite un compte Discord valide, conforme aux Conditions d'utilisation de Discord. L'utilisateur est responsable de la sécurité et de l'utilisation de son compte.</p>
-  </section>
-  <hr>
+    <h2><span class="num">3</span> <span id="s3-title"></span></h2>
+    <p id="s3-intro"></p>
+    <ul id="s3-list"></ul>
+    <div class="callout" id="s3-callout"></div>
+  </section><hr>
 
   <section>
-    <h2><span class="num">3</span> Description du service</h2>
-    <p>Le serveur SHOP propose :</p>
-    <ul>
-      <li>Un accès à des salons et contenus numériques exclusifs</li>
-      <li>Un système d'abonnements à niveaux (VIP, Premium, Elite)</li>
-      <li>Un traitement automatisé des paiements via PayPal</li>
-      <li>Un système de tickets de support</li>
-      <li>Des outils de modération automatisée (anti-raid, gestion des rôles, logs)</li>
-    </ul>
-    <div class="callout">L'ensemble des opérations est <strong>entièrement automatisé</strong> via le bot Nexorya. Aucune intervention manuelle n'est requise dans le cadre du fonctionnement standard.</div>
-  </section>
-  <hr>
-
-  <section>
-    <h2><span class="num">4</span> Abonnements et paiements</h2>
-    <h3>4.1 Offres disponibles</h3>
+    <h2><span class="num">4</span> <span id="s4-title"></span></h2>
+    <h3 id="s4-h1"></h3>
     <div class="table-wrap">
       <table>
-        <thead><tr><th>Niveau</th><th>Prix</th></tr></thead>
+        <thead><tr><th id="th-level"></th><th id="th-price"></th></tr></thead>
         <tbody>
           <tr><td class="tier">VIP</td><td class="price">1,99 USD</td></tr>
           <tr><td class="tier">Premium</td><td class="price">5,99 USD</td></tr>
@@ -243,131 +88,232 @@
         </tbody>
       </table>
     </div>
-    <p>Les prix sont libellés en USD, sauf indication contraire. Ils peuvent être modifiés à tout moment.</p>
-    <h3>4.2 Moyen de paiement</h3>
-    <p>Les paiements sont traités exclusivement via <strong>PayPal</strong>. En finalisant un paiement, l'utilisateur confirme être autorisé à effectuer la transaction.</p>
-    <h3>4.3 Livraison</h3>
-    <p>L'accès est accordé <strong>automatiquement et immédiatement</strong> après confirmation du paiement. En cas de délai technique exceptionnel, l'activation peut prendre jusqu'à 24 heures.</p>
-  </section>
-  <hr>
+    <p id="s4-p1"></p>
+    <h3 id="s4-h2"></h3>
+    <p id="s4-p2"></p>
+    <h3 id="s4-h3"></h3>
+    <p id="s4-p3"></p>
+  </section><hr>
 
   <section>
-    <h2><span class="num">5</span> Droit de rétractation</h2>
-    <p>Conformément à la réglementation applicable aux contenus numériques à livraison instantanée, <strong>le droit de rétractation est expressément exclu</strong> dès lors que l'accès numérique a été activé.</p>
-    <p>En procédant à l'achat, l'utilisateur reconnaît et accepte cette condition.</p>
-  </section>
-  <hr>
+    <h2><span class="num">5</span> <span id="s5-title"></span></h2>
+    <p id="s5-p1"></p>
+    <p id="s5-p2"></p>
+  </section><hr>
 
   <section>
-    <h2><span class="num">6</span> Politique de remboursement</h2>
-    <p>Tous les achats sont <strong>définitifs et non remboursables</strong> une fois l'accès accordé. Un remboursement peut être envisagé uniquement dans les cas suivants :</p>
-    <ul>
-      <li>Non-livraison avérée due à une défaillance technique confirmée par les journaux système</li>
-      <li>Double paiement identique confirmé par le système</li>
-    </ul>
-    <p>Toute demande doit être formulée via le support officiel du serveur.</p>
-  </section>
-  <hr>
+    <h2><span class="num">6</span> <span id="s6-title"></span></h2>
+    <p id="s6-intro"></p>
+    <ul id="s6-list"></ul>
+    <p id="s6-p2"></p>
+  </section><hr>
 
   <section>
-    <h2><span class="num">7</span> Utilisation du service</h2>
-    <h3>7.1 Accès personnel et non transférable</h3>
-    <p>L'accès acheté est strictement personnel. Il est interdit de partager son accès, de revendre ou redistribuer les contenus, ou d'utiliser plusieurs comptes pour contourner les restrictions.</p>
-    <h3>7.2 Comportements interdits</h3>
-    <ul>
-      <li>Harcèlement, insultes, discriminations ou menaces</li>
-      <li>Spam, flood ou messages répétitifs</li>
-      <li>Publicité non autorisée ou autopublicité</li>
-      <li>Contenu illégal sous quelque forme que ce soit</li>
-      <li>Exploitation sexuelle de mineurs (tolérance zéro)</li>
-      <li>Contenu gore ou violence extrême hors zones autorisées</li>
-      <li>Tentative de contournement du système de paiement ou d'accès</li>
-      <li>Exploitation de failles ou bugs du bot ou du serveur</li>
-      <li>Utilisation de comptes alternatifs pour contourner des sanctions</li>
-    </ul>
-    <h3>7.3 Contenus NSFW</h3>
-    <p>Les contenus NSFW sont partiellement autorisés, <strong>uniquement dans les salons désignés</strong>. Tout contenu NSFW hors de ces espaces est strictement interdit et doit respecter les Conditions de Discord.</p>
-  </section>
-  <hr>
+    <h2><span class="num">7</span> <span id="s7-title"></span></h2>
+    <h3 id="s7-h1"></h3>
+    <p id="s7-p1"></p>
+    <h3 id="s7-h2"></h3>
+    <ul id="s7-list"></ul>
+    <h3 id="s7-h3"></h3>
+    <p id="s7-p3"></p>
+  </section><hr>
 
   <section>
-    <h2><span class="num">8</span> Modération et sanctions</h2>
-    <p>La modération est entièrement automatisée via Nexorya et peut inclure, selon la gravité :</p>
-    <ul>
-      <li>Avertissement</li>
-      <li>Suppression de messages</li>
-      <li>Retrait de rôle(s)</li>
-      <li>Mute temporaire</li>
-      <li>Exclusion (ban) temporaire ou définitif</li>
-    </ul>
-    <p>Les violations graves peuvent entraîner un ban immédiat sans avertissement préalable.</p>
-  </section>
-  <hr>
+    <h2><span class="num">8</span> <span id="s8-title"></span></h2>
+    <p id="s8-intro"></p>
+    <ul id="s8-list"></ul>
+    <p id="s8-p2"></p>
+  </section><hr>
 
   <section>
-    <h2><span class="num">9</span> Chargebacks et litiges PayPal</h2>
-    <p>Toute contestation de paiement (chargeback) non justifiée auprès de PayPal est considérée comme une tentative de fraude et entraînera :</p>
-    <ul>
-      <li>Suppression immédiate de l'accès au service</li>
-      <li>Ban définitif du serveur</li>
-      <li>Transmission des preuves à PayPal (logs, preuve de livraison, historique d'accès)</li>
-    </ul>
-  </section>
-  <hr>
+    <h2><span class="num">9</span> <span id="s9-title"></span></h2>
+    <p id="s9-intro"></p>
+    <ul id="s9-list"></ul>
+  </section><hr>
 
   <section>
-    <h2><span class="num">10</span> Disponibilité du service</h2>
-    <p>Nous ne garantissons pas une disponibilité ininterrompue du service. Des interruptions temporaires peuvent survenir en raison de maintenance, de problèmes liés à Discord, ou de facteurs externes indépendants de notre volonté.</p>
-  </section>
-  <hr>
+    <h2><span class="num">10</span> <span id="s10-title"></span></h2>
+    <p id="s10-p1"></p>
+  </section><hr>
 
   <section>
-    <h2><span class="num">11</span> Limitation de responsabilité</h2>
-    <p>Nous déclinons toute responsabilité concernant :</p>
-    <ul>
-      <li>Les contenus générés par les utilisateurs</li>
-      <li>Les problèmes liés à la plateforme Discord ou à PayPal</li>
-      <li>La perte d'accès résultant d'actions de l'utilisateur</li>
-      <li>Les litiges entre utilisateurs</li>
-      <li>L'utilisation abusive des accès achetés</li>
-    </ul>
-  </section>
-  <hr>
+    <h2><span class="num">11</span> <span id="s11-title"></span></h2>
+    <p id="s11-intro"></p>
+    <ul id="s11-list"></ul>
+  </section><hr>
 
   <section>
-    <h2><span class="num">12</span> Propriété intellectuelle</h2>
-    <p>Les éléments du service (nom, logo, contenus exclusifs) sont la propriété de leurs auteurs respectifs. Toute reproduction, diffusion ou utilisation non autorisée est interdite.</p>
-  </section>
-  <hr>
+    <h2><span class="num">12</span> <span id="s12-title"></span></h2>
+    <p id="s12-p1"></p>
+  </section><hr>
 
   <section>
-    <h2><span class="num">13</span> Modification des CGU</h2>
-    <p>Les présentes CGU peuvent être mises à jour à tout moment sans préavis. La poursuite de l'utilisation du service après modification vaut acceptation des nouvelles conditions.</p>
-  </section>
-  <hr>
+    <h2><span class="num">13</span> <span id="s13-title"></span></h2>
+    <p id="s13-p1"></p>
+  </section><hr>
 
   <section>
-    <h2><span class="num">14</span> Droit applicable</h2>
-    <p>Les présentes CGU sont soumises au droit applicable dans le pays de résidence de l'opérateur. En cas de litige, les parties s'engagent à rechercher une résolution amiable avant tout recours judiciaire.</p>
-  </section>
-  <hr>
+    <h2><span class="num">14</span> <span id="s14-title"></span></h2>
+    <p id="s14-p1"></p>
+  </section><hr>
 
   <section>
-    <h2><span class="num">15</span> Contact et support</h2>
-    <p>Toute demande, réclamation ou question doit être adressée via le canal de support officiel disponible sur le serveur Discord SHOP.</p>
-  </section>
-  <hr>
+    <h2><span class="num">15</span> <span id="s15-title"></span></h2>
+    <p id="s15-p1"></p>
+  </section><hr>
 
   <section>
-    <h2><span class="num">16</span> Acceptation finale</h2>
-    <div class="callout">En restant membre du serveur ou en effectuant un achat, vous confirmez avoir lu, compris et accepté l'intégralité des présentes Conditions Générales d'Utilisation.</div>
+    <h2><span class="num">16</span> <span id="s16-title"></span></h2>
+    <div class="callout" id="s16-callout"></div>
   </section>
-
 </main>
 
 <footer>
-  <p>Nexorya Bot — Serveur SHOP &nbsp;·&nbsp; <a href="politique_confidentialite_nexorya.html">Politique de Confidentialité</a></p>
+  <span id="footer-text"></span> &nbsp;·&nbsp; <a href="politique_confidentialite_nexorya.html" id="footer-link"></a>
 </footer>
 
+<button class="lang-btn" onclick="toggleLang()">
+  🌐 <span id="lang-next"></span> <span class="lang-pill" id="lang-current"></span>
+</button>
+
+<script>
+const i18n = {
+  fr: {
+    pageTitle: "CGU — Serveur SHOP · Nexorya",
+    badge: "⚖ Document légal",
+    title: "Conditions Générales d'<span style='color:var(--accent)'>Utilisation</span>",
+    meta: "Serveur SHOP · Nexorya Bot · Dernière mise à jour : juin 2026",
+    s1: { title: "Objet et acceptation", p1: "Les présentes Conditions Générales d'Utilisation (CGU) régissent l'accès et l'utilisation du serveur Discord <strong>SHOP</strong> ainsi que de ses services numériques automatisés, opérés via le bot <strong>Nexorya</strong>.", p2: "En rejoignant le serveur ou en effectuant un achat, l'utilisateur reconnaît avoir lu et accepté l'intégralité des présentes CGU. L'ignorance des règles ne peut être invoquée comme défense." },
+    s2: { title: "Accès au service", h1: "2.1 Âge requis", p1: "L'accès au serveur SHOP est strictement réservé aux utilisateurs âgés de <strong>16 ans ou plus</strong>. Tout utilisateur dont l'âge est inférieur à cette limite sera exclu définitivement et sans préavis.", h2: "2.2 Compte Discord", p2: "L'utilisation du service nécessite un compte Discord valide, conforme aux Conditions d'utilisation de Discord. L'utilisateur est responsable de la sécurité et de l'utilisation de son compte." },
+    s3: { title: "Description du service", intro: "Le serveur SHOP propose :", items: ["Un accès à des salons et contenus numériques exclusifs", "Un système d'abonnements à niveaux (VIP, Premium, Elite)", "Un traitement automatisé des paiements via PayPal", "Un système de tickets de support", "Des outils de modération automatisée (anti-raid, gestion des rôles, logs)"], callout: "L'ensemble des opérations est <strong>entièrement automatisé</strong> via le bot Nexorya. Aucune intervention manuelle n'est requise dans le cadre du fonctionnement standard." },
+    s4: { title: "Abonnements et paiements", h1: "4.1 Offres disponibles", p1: "Les prix sont libellés en USD, sauf indication contraire. Ils peuvent être modifiés à tout moment.", h2: "4.2 Moyen de paiement", p2: "Les paiements sont traités exclusivement via <strong>PayPal</strong>. En finalisant un paiement, l'utilisateur confirme être autorisé à effectuer la transaction.", h3: "4.3 Livraison", p3: "L'accès est accordé <strong>automatiquement et immédiatement</strong> après confirmation du paiement. En cas de délai technique exceptionnel, l'activation peut prendre jusqu'à 24 heures.", thLevel: "Niveau", thPrice: "Prix" },
+    s5: { title: "Droit de rétractation", p1: "Conformément à la réglementation applicable aux contenus numériques à livraison instantanée, <strong>le droit de rétractation est expressément exclu</strong> dès lors que l'accès numérique a été activé.", p2: "En procédant à l'achat, l'utilisateur reconnaît et accepte cette condition." },
+    s6: { title: "Politique de remboursement", intro: "Tous les achats sont <strong>définitifs et non remboursables</strong> une fois l'accès accordé. Un remboursement peut être envisagé uniquement dans les cas suivants :", items: ["Non-livraison avérée due à une défaillance technique confirmée par les journaux système", "Double paiement identique confirmé par le système"], p2: "Toute demande doit être formulée via le support officiel du serveur." },
+    s7: { title: "Utilisation du service", h1: "7.1 Accès personnel et non transférable", p1: "L'accès acheté est strictement personnel. Il est interdit de partager son accès, de revendre ou redistribuer les contenus, ou d'utiliser plusieurs comptes pour contourner les restrictions.", h2: "7.2 Comportements interdits", items: ["Harcèlement, insultes, discriminations ou menaces", "Spam, flood ou messages répétitifs", "Publicité non autorisée ou autopublicité", "Contenu illégal sous quelque forme que ce soit", "Exploitation sexuelle de mineurs (tolérance zéro)", "Contenu gore ou violence extrême hors zones autorisées", "Tentative de contournement du système de paiement ou d'accès", "Exploitation de failles ou bugs du bot ou du serveur", "Utilisation de comptes alternatifs pour contourner des sanctions"], h3: "7.3 Contenus NSFW", p3: "Les contenus NSFW sont partiellement autorisés, <strong>uniquement dans les salons désignés</strong>. Tout contenu NSFW hors de ces espaces est strictement interdit et doit respecter les Conditions de Discord." },
+    s8: { title: "Modération et sanctions", intro: "La modération est entièrement automatisée via Nexorya et peut inclure, selon la gravité :", items: ["Avertissement", "Suppression de messages", "Retrait de rôle(s)", "Mute temporaire", "Exclusion (ban) temporaire ou définitif"], p2: "Les violations graves peuvent entraîner un ban immédiat sans avertissement préalable." },
+    s9: { title: "Chargebacks et litiges PayPal", intro: "Toute contestation de paiement (chargeback) non justifiée auprès de PayPal est considérée comme une tentative de fraude et entraînera :", items: ["Suppression immédiate de l'accès au service", "Ban définitif du serveur", "Transmission des preuves à PayPal (logs, preuve de livraison, historique d'accès)"] },
+    s10: { title: "Disponibilité du service", p1: "Nous ne garantissons pas une disponibilité ininterrompue du service. Des interruptions temporaires peuvent survenir en raison de maintenance, de problèmes liés à Discord, ou de facteurs externes indépendants de notre volonté." },
+    s11: { title: "Limitation de responsabilité", intro: "Nous déclinons toute responsabilité concernant :", items: ["Les contenus générés par les utilisateurs", "Les problèmes liés à la plateforme Discord ou à PayPal", "La perte d'accès résultant d'actions de l'utilisateur", "Les litiges entre utilisateurs", "L'utilisation abusive des accès achetés"] },
+    s12: { title: "Propriété intellectuelle", p1: "Les éléments du service (nom, logo, contenus exclusifs) sont la propriété de leurs auteurs respectifs. Toute reproduction, diffusion ou utilisation non autorisée est interdite." },
+    s13: { title: "Modification des CGU", p1: "Les présentes CGU peuvent être mises à jour à tout moment sans préavis. La poursuite de l'utilisation du service après modification vaut acceptation des nouvelles conditions." },
+    s14: { title: "Droit applicable", p1: "Les présentes CGU sont soumises au droit applicable dans le pays de résidence de l'opérateur. En cas de litige, les parties s'engagent à rechercher une résolution amiable avant tout recours judiciaire." },
+    s15: { title: "Contact et support", p1: "Toute demande, réclamation ou question doit être adressée via le canal de support officiel disponible sur le serveur Discord SHOP." },
+    s16: { title: "Acceptation finale", callout: "En restant membre du serveur ou en effectuant un achat, vous confirmez avoir lu, compris et accepté l'intégralité des présentes Conditions Générales d'Utilisation." },
+    footer: "Nexorya Bot — Serveur SHOP",
+    footerLink: "Politique de Confidentialité",
+    langNext: "EN", langCurrent: "FR"
+  },
+  en: {
+    pageTitle: "ToS — SHOP Server · Nexorya",
+    badge: "⚖ Legal Document",
+    title: "Terms of <span style='color:var(--accent)'>Service</span>",
+    meta: "SHOP Server · Nexorya Bot · Last updated: June 2026",
+    s1: { title: "Purpose and Acceptance", p1: "These Terms of Service (ToS) govern access to and use of the Discord server <strong>SHOP</strong> and its automated digital services, operated by the <strong>Nexorya</strong> bot.", p2: "By joining the server or making a purchase, the user acknowledges having read and accepted these ToS in full. Ignorance of the rules cannot be used as a defense." },
+    s2: { title: "Access to the Service", h1: "2.1 Age Requirement", p1: "Access to the SHOP server is strictly limited to users aged <strong>16 or older</strong>. Any user found to be under this age will be permanently removed without notice.", h2: "2.2 Discord Account", p2: "Using the service requires a valid Discord account in compliance with Discord's Terms of Service. The user is responsible for the security and use of their account." },
+    s3: { title: "Description of the Service", intro: "The SHOP server offers:", items: ["Access to exclusive digital channels and content", "A tiered subscription system (VIP, Premium, Elite)", "Automated payment processing via PayPal", "A support ticket system", "Automated moderation tools (anti-raid, role management, logs)"], callout: "All operations are <strong>fully automated</strong> via the Nexorya bot. No manual intervention is required under standard operation." },
+    s4: { title: "Subscriptions and Payments", h1: "4.1 Available Plans", p1: "Prices are listed in USD unless otherwise stated and may be changed at any time.", h2: "4.2 Payment Method", p2: "Payments are processed exclusively via <strong>PayPal</strong>. By completing a payment, the user confirms they are authorized to make the transaction.", h3: "4.3 Delivery", p3: "Access is granted <strong>automatically and immediately</strong> after payment confirmation. In the event of a rare technical delay, activation may take up to 24 hours.", thLevel: "Tier", thPrice: "Price" },
+    s5: { title: "Right of Withdrawal", p1: "In accordance with regulations applicable to instantly delivered digital content, <strong>the right of withdrawal is expressly waived</strong> once digital access has been activated.", p2: "By completing a purchase, the user acknowledges and accepts this condition." },
+    s6: { title: "Refund Policy", intro: "All purchases are <strong>final and non-refundable</strong> once access has been granted. A refund may only be considered in the following cases:", items: ["Confirmed non-delivery due to a verified technical failure in the system logs", "Confirmed duplicate payment by the system"], p2: "All requests must be submitted via the official server support channel." },
+    s7: { title: "Use of the Service", h1: "7.1 Personal and Non-Transferable Access", p1: "Purchased access is strictly personal. Sharing access, reselling or redistributing content, or using multiple accounts to bypass restrictions is prohibited.", h2: "7.2 Prohibited Conduct", items: ["Harassment, insults, discrimination or threats", "Spam, flooding or repeated messages", "Unauthorized advertising or self-promotion", "Illegal content of any kind", "Sexual exploitation of minors (zero tolerance)", "Gore or extreme violence outside designated areas", "Attempts to bypass the payment or access system", "Exploiting bugs or vulnerabilities in the bot or server", "Using alternate accounts to evade sanctions"], h3: "7.3 NSFW Content", p3: "NSFW content is partially allowed, <strong>only in designated channels</strong>. Any NSFW content outside these spaces is strictly prohibited and must comply with Discord's Terms of Service." },
+    s8: { title: "Moderation and Sanctions", intro: "Moderation is fully automated via Nexorya and may include, depending on severity:", items: ["Warning", "Message deletion", "Role removal", "Temporary mute", "Temporary or permanent ban"], p2: "Serious violations may result in an immediate ban without prior warning." },
+    s9: { title: "Chargebacks and PayPal Disputes", intro: "Any unjustified payment dispute (chargeback) filed with PayPal will be considered fraudulent and will result in:", items: ["Immediate removal of service access", "Permanent ban from the server", "Submission of evidence to PayPal (logs, delivery proof, access history)"] },
+    s10: { title: "Service Availability", p1: "We do not guarantee uninterrupted service availability. Temporary interruptions may occur due to maintenance, Discord platform issues, or external factors beyond our control." },
+    s11: { title: "Limitation of Liability", intro: "We accept no liability for:", items: ["User-generated content", "Issues related to Discord or PayPal platforms", "Loss of access resulting from user actions", "Disputes between users", "Misuse of purchased access"] },
+    s12: { title: "Intellectual Property", p1: "All elements of the service (name, logo, exclusive content) are the property of their respective owners. Any unauthorized reproduction, distribution or use is prohibited." },
+    s13: { title: "Amendments to the ToS", p1: "These ToS may be updated at any time without notice. Continued use of the service after any update constitutes acceptance of the new terms." },
+    s14: { title: "Governing Law", p1: "These ToS are governed by the law applicable in the operator's country of residence. In the event of a dispute, the parties agree to seek an amicable resolution before any legal proceedings." },
+    s15: { title: "Contact and Support", p1: "All requests, complaints or questions must be submitted via the official support channel on the SHOP Discord server." },
+    s16: { title: "Final Acceptance", callout: "By remaining a member of the server or making a purchase, you confirm that you have read, understood and agreed to these Terms of Service in full." },
+    footer: "Nexorya Bot — SHOP Server",
+    footerLink: "Privacy Policy",
+    langNext: "FR", langCurrent: "EN"
+  }
+};
+
+let lang = localStorage.getItem('nxLang') || 'fr';
+
+function setList(id, items) {
+  const ul = document.getElementById(id);
+  ul.innerHTML = items.map(i => `<li>${i}</li>`).join('');
+}
+
+function applyLang() {
+  const t = i18n[lang];
+  document.documentElement.lang = lang;
+  document.title = t.pageTitle;
+  document.getElementById('h-badge').textContent = t.badge;
+  document.getElementById('h-title').innerHTML = t.title;
+  document.getElementById('h-meta').textContent = t.meta;
+  document.getElementById('s1-title').textContent = t.s1.title;
+  document.getElementById('s1-p1').innerHTML = t.s1.p1;
+  document.getElementById('s1-p2').textContent = t.s1.p2;
+  document.getElementById('s2-title').textContent = t.s2.title;
+  document.getElementById('s2-h1').textContent = t.s2.h1;
+  document.getElementById('s2-p1').innerHTML = t.s2.p1;
+  document.getElementById('s2-h2').textContent = t.s2.h2;
+  document.getElementById('s2-p2').textContent = t.s2.p2;
+  document.getElementById('s3-title').textContent = t.s3.title;
+  document.getElementById('s3-intro').textContent = t.s3.intro;
+  setList('s3-list', t.s3.items);
+  document.getElementById('s3-callout').innerHTML = t.s3.callout;
+  document.getElementById('s4-title').textContent = t.s4.title;
+  document.getElementById('s4-h1').textContent = t.s4.h1;
+  document.getElementById('s4-p1').textContent = t.s4.p1;
+  document.getElementById('s4-h2').textContent = t.s4.h2;
+  document.getElementById('s4-p2').innerHTML = t.s4.p2;
+  document.getElementById('s4-h3').textContent = t.s4.h3;
+  document.getElementById('s4-p3').innerHTML = t.s4.p3;
+  document.getElementById('th-level').textContent = t.s4.thLevel;
+  document.getElementById('th-price').textContent = t.s4.thPrice;
+  document.getElementById('s5-title').textContent = t.s5.title;
+  document.getElementById('s5-p1').innerHTML = t.s5.p1;
+  document.getElementById('s5-p2').textContent = t.s5.p2;
+  document.getElementById('s6-title').textContent = t.s6.title;
+  document.getElementById('s6-intro').innerHTML = t.s6.intro;
+  setList('s6-list', t.s6.items);
+  document.getElementById('s6-p2').textContent = t.s6.p2;
+  document.getElementById('s7-title').textContent = t.s7.title;
+  document.getElementById('s7-h1').textContent = t.s7.h1;
+  document.getElementById('s7-p1').textContent = t.s7.p1;
+  document.getElementById('s7-h2').textContent = t.s7.h2;
+  setList('s7-list', t.s7.items);
+  document.getElementById('s7-h3').textContent = t.s7.h3;
+  document.getElementById('s7-p3').innerHTML = t.s7.p3;
+  document.getElementById('s8-title').textContent = t.s8.title;
+  document.getElementById('s8-intro').textContent = t.s8.intro;
+  setList('s8-list', t.s8.items);
+  document.getElementById('s8-p2').textContent = t.s8.p2;
+  document.getElementById('s9-title').textContent = t.s9.title;
+  document.getElementById('s9-intro').textContent = t.s9.intro;
+  setList('s9-list', t.s9.items);
+  document.getElementById('s10-title').textContent = t.s10.title;
+  document.getElementById('s10-p1').textContent = t.s10.p1;
+  document.getElementById('s11-title').textContent = t.s11.title;
+  document.getElementById('s11-intro').textContent = t.s11.intro;
+  setList('s11-list', t.s11.items);
+  document.getElementById('s12-title').textContent = t.s12.title;
+  document.getElementById('s12-p1').textContent = t.s12.p1;
+  document.getElementById('s13-title').textContent = t.s13.title;
+  document.getElementById('s13-p1').textContent = t.s13.p1;
+  document.getElementById('s14-title').textContent = t.s14.title;
+  document.getElementById('s14-p1').textContent = t.s14.p1;
+  document.getElementById('s15-title').textContent = t.s15.title;
+  document.getElementById('s15-p1').textContent = t.s15.p1;
+  document.getElementById('s16-title').textContent = t.s16.title;
+  document.getElementById('s16-callout').innerHTML = t.s16.callout;
+  document.getElementById('footer-text').textContent = t.footer;
+  document.getElementById('footer-link').textContent = t.footerLink;
+  document.getElementById('lang-next').textContent = t.langNext;
+  document.getElementById('lang-current').textContent = t.langCurrent;
+}
+
+function toggleLang() {
+  lang = lang === 'fr' ? 'en' : 'fr';
+  localStorage.setItem('nxLang', lang);
+  applyLang();
+}
+
+applyLang();
+</script>
 </body>
 </html>
