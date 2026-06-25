@@ -8,182 +8,163 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
     :root {
-      --bg:        #0e0f13;
-      --surface:   #16181f;
-      --border:    #262933;
-      --accent:    #5865f2;
-      --accent-dim:#3b4299;
-      --text:      #d4d6e0;
-      --muted:     #6b7080;
-      --heading:   #f0f1f5;
+      --bg: #0e0f13; --surface: #16181f; --border: #262933;
+      --accent: #5865f2; --text: #d4d6e0; --muted: #6b7080; --heading: #f0f1f5;
     }
-
     body {
-      background: var(--bg);
-      color: var(--text);
-      font-family: 'Inter', sans-serif;
-      font-size: 15px;
-      line-height: 1.7;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 40px 24px;
+      background: var(--bg); color: var(--text);
+      font-family: 'Inter', sans-serif; font-size: 15px; line-height: 1.7;
+      min-height: 100vh; display: flex; flex-direction: column;
+      align-items: center; justify-content: center; padding: 40px 24px;
     }
-
-    /* ── Logo / titre ── */
     .logo {
-      width: 56px;
-      height: 56px;
-      background: var(--accent);
-      border-radius: 16px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 26px;
-      margin: 0 auto 24px;
+      width: 56px; height: 56px; background: var(--accent);
+      border-radius: 16px; display: flex; align-items: center;
+      justify-content: center; font-size: 26px; margin: 0 auto 24px;
     }
-
-    .hero {
-      text-align: center;
-      margin-bottom: 48px;
-    }
+    .hero { text-align: center; margin-bottom: 48px; }
     .hero h1 {
       font-family: 'Space Grotesk', sans-serif;
-      font-size: clamp(28px, 6vw, 42px);
-      color: var(--heading);
-      letter-spacing: -.02em;
-      margin-bottom: 10px;
+      font-size: clamp(28px, 6vw, 42px); color: var(--heading);
+      letter-spacing: -.02em; margin-bottom: 10px;
     }
     .hero h1 span { color: var(--accent); }
-    .hero p {
-      color: var(--muted);
-      font-size: 15px;
-      max-width: 420px;
-      margin: 0 auto;
-    }
-
-    /* ── Cards ── */
+    .hero p { color: var(--muted); font-size: 15px; max-width: 420px; margin: 0 auto; }
     .cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 20px;
-      width: 100%;
-      max-width: 680px;
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px; width: 100%; max-width: 680px;
     }
-
     .card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      padding: 28px 28px 24px;
-      text-decoration: none;
-      color: inherit;
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-      transition: border-color .18s, transform .18s;
-      position: relative;
-      overflow: hidden;
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 14px; padding: 28px 28px 24px; text-decoration: none;
+      color: inherit; display: flex; flex-direction: column; gap: 12px;
+      transition: border-color .18s, transform .18s; position: relative; overflow: hidden;
     }
     .card::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      border-radius: 14px;
+      content: ''; position: absolute; inset: 0; border-radius: 14px;
       background: linear-gradient(135deg, rgba(88,101,242,.07) 0%, transparent 60%);
-      opacity: 0;
-      transition: opacity .18s;
+      opacity: 0; transition: opacity .18s;
     }
-    .card:hover {
-      border-color: var(--accent);
-      transform: translateY(-3px);
-    }
+    .card:hover { border-color: var(--accent); transform: translateY(-3px); }
     .card:hover::after { opacity: 1; }
-
-    .card-icon {
-      font-size: 28px;
-      line-height: 1;
-    }
+    .card-icon { font-size: 28px; line-height: 1; }
     .card h2 {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: 18px;
-      font-weight: 700;
-      color: var(--heading);
-      letter-spacing: -.01em;
+      font-family: 'Space Grotesk', sans-serif; font-size: 18px;
+      font-weight: 700; color: var(--heading); letter-spacing: -.01em;
     }
-    .card p {
-      font-size: 13.5px;
-      color: var(--muted);
-      flex: 1;
-    }
+    .card p { font-size: 13.5px; color: var(--muted); flex: 1; }
     .card-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      font-size: 13px;
-      font-weight: 600;
-      color: var(--accent);
-      margin-top: 4px;
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 13px; font-weight: 600; color: var(--accent); margin-top: 4px;
     }
-    .card-link svg {
-      transition: transform .15s;
+    .card-link svg { transition: transform .15s; }
+    .card:hover .card-link svg { transform: translateX(3px); }
+    footer { margin-top: 56px; font-size: 13px; color: var(--muted); text-align: center; }
+    .lang-btn {
+      position: fixed; bottom: 24px; right: 24px;
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 99px; padding: 8px 16px;
+      display: flex; align-items: center; gap: 8px;
+      cursor: pointer; font-family: 'Inter', sans-serif;
+      font-size: 13px; font-weight: 600; color: var(--heading);
+      box-shadow: 0 4px 20px rgba(0,0,0,.4);
+      transition: border-color .15s, transform .15s; user-select: none;
     }
-    .card:hover .card-link svg {
-      transform: translateX(3px);
-    }
-
-    /* ── Footer ── */
-    footer {
-      margin-top: 56px;
-      font-size: 13px;
-      color: var(--muted);
-      text-align: center;
+    .lang-btn:hover { border-color: var(--accent); transform: translateY(-1px); }
+    .lang-pill {
+      background: var(--accent); color: #fff;
+      border-radius: 99px; padding: 2px 8px; font-size: 11px; font-weight: 700;
     }
   </style>
 </head>
 <body>
-
   <div class="hero">
     <div class="logo">⚖</div>
-    <h1>Documents <span>légaux</span></h1>
-    <p>Retrouvez ici les documents officiels du serveur Discord <strong style="color:var(--text)">SHOP</strong> opéré par Nexorya.</p>
+    <h1 id="hero-title"></h1>
+    <p id="hero-sub"></p>
   </div>
-
   <div class="cards">
-
     <a class="card" href="cgu_nexorya.html">
       <div class="card-icon">📋</div>
-      <h2>Conditions Générales d'Utilisation</h2>
-      <p>Règles d'accès au serveur, abonnements VIP / Premium / Elite, paiements PayPal, comportements interdits et sanctions.</p>
+      <h2 id="card1-title"></h2>
+      <p id="card1-desc"></p>
       <span class="card-link">
-        Lire les CGU
-        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M3 7h8M7.5 3.5L11 7l-3.5 3.5" stroke="#5865f2" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
+        <span id="card1-link"></span>
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7h8M7.5 3.5L11 7l-3.5 3.5" stroke="#5865f2" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </span>
     </a>
-
     <a class="card" href="politique_confidentialite_nexorya.html">
       <div class="card-icon">🔒</div>
-      <h2>Politique de Confidentialité</h2>
-      <p>Données collectées, finalités du traitement, droits RGPD, partage avec Discord et PayPal, et sécurité des informations.</p>
+      <h2 id="card2-title"></h2>
+      <p id="card2-desc"></p>
       <span class="card-link">
-        Lire la politique
-        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M3 7h8M7.5 3.5L11 7l-3.5 3.5" stroke="#5865f2" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
+        <span id="card2-link"></span>
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7h8M7.5 3.5L11 7l-3.5 3.5" stroke="#5865f2" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </span>
     </a>
-
   </div>
+  <footer id="footer-text"></footer>
+  <button class="lang-btn" onclick="toggleLang()">
+    🌐 <span id="lang-next"></span> <span class="lang-pill" id="lang-current"></span>
+  </button>
 
-  <footer>
-    Nexorya Bot — Serveur SHOP &nbsp;·&nbsp; Dernière mise à jour : juin 2026
-  </footer>
+  <script>
+    const i18n = {
+      fr: {
+        title: 'Documents <span style="color:var(--accent)">légaux</span>',
+        sub: 'Retrouvez ici les documents officiels du serveur Discord <strong style="color:#d4d6e0">SHOP</strong> opéré par Nexorya.',
+        card1Title: "Conditions Générales d'Utilisation",
+        card1Desc: "Règles d'accès au serveur, abonnements VIP / Premium / Elite, paiements PayPal, comportements interdits et sanctions.",
+        card1Link: "Lire les CGU",
+        card2Title: "Politique de Confidentialité",
+        card2Desc: "Données collectées, finalités du traitement, droits RGPD, partage avec Discord et PayPal, et sécurité des informations.",
+        card2Link: "Lire la politique",
+        footer: "Nexorya Bot — Serveur SHOP · Dernière mise à jour : juin 2026",
+        pageTitle: "Documents légaux — Serveur SHOP · Nexorya",
+        next: "EN", current: "FR"
+      },
+      en: {
+        title: 'Legal <span style="color:var(--accent)">Documents</span>',
+        sub: 'Find here the official legal documents of the Discord server <strong style="color:#d4d6e0">SHOP</strong> operated by Nexorya.',
+        card1Title: "Terms of Service",
+        card1Desc: "Server access rules, VIP / Premium / Elite subscriptions, PayPal payments, prohibited conduct and sanctions.",
+        card1Link: "Read the ToS",
+        card2Title: "Privacy Policy",
+        card2Desc: "Data collected, processing purposes, GDPR rights, sharing with Discord and PayPal, and information security.",
+        card2Link: "Read the policy",
+        footer: "Nexorya Bot — SHOP Server · Last updated: June 2026",
+        pageTitle: "Legal Documents — SHOP Server · Nexorya",
+        next: "FR", current: "EN"
+      }
+    };
 
+    let lang = localStorage.getItem('nxLang') || 'fr';
+
+    function applyLang() {
+      const t = i18n[lang];
+      document.documentElement.lang = lang;
+      document.title = t.pageTitle;
+      document.getElementById('hero-title').innerHTML = t.title;
+      document.getElementById('hero-sub').innerHTML = t.sub;
+      document.getElementById('card1-title').textContent = t.card1Title;
+      document.getElementById('card1-desc').textContent = t.card1Desc;
+      document.getElementById('card1-link').textContent = t.card1Link;
+      document.getElementById('card2-title').textContent = t.card2Title;
+      document.getElementById('card2-desc').textContent = t.card2Desc;
+      document.getElementById('card2-link').textContent = t.card2Link;
+      document.getElementById('footer-text').textContent = t.footer;
+      document.getElementById('lang-next').textContent = t.next;
+      document.getElementById('lang-current').textContent = t.current;
+    }
+
+    function toggleLang() {
+      lang = lang === 'fr' ? 'en' : 'fr';
+      localStorage.setItem('nxLang', lang);
+      applyLang();
+    }
+
+    applyLang();
+  </script>
 </body>
 </html>
