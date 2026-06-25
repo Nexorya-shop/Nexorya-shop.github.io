@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Politique de Confidentialité — Serveur SHOP · Nexorya</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:        #0e0f13;
+      --surface:   #16181f;
+      --border:    #262933;
+      --accent:    #5865f2;
+      --accent-dim:#3b4299;
+      --text:      #d4d6e0;
+      --muted:     #6b7080;
+      --heading:   #f0f1f5;
+      --white:     #ffffff;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', sans-serif;
+      font-size: 15px;
+      line-height: 1.75;
+      min-height: 100vh;
+    }
+
+    /* ── Header ── */
+    header {
+      border-bottom: 1px solid var(--border);
+      padding: 28px 0 24px;
+      text-align: center;
+    }
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--accent-dim);
+      color: #c7cdf8;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      padding: 4px 12px;
+      border-radius: 99px;
+      margin-bottom: 16px;
+    }
+    header h1 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(26px, 5vw, 38px);
+      color: var(--heading);
+      letter-spacing: -.02em;
+    }
+    header h1 span { color: var(--accent); }
+    .meta {
+      margin-top: 10px;
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    /* ── Layout ── */
+    main {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 56px 24px 80px;
+    }
+
+    /* ── Sections ── */
+    section {
+      margin-bottom: 48px;
+    }
+    section h2 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--heading);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+    .num {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 28px;
+      height: 28px;
+      border-radius: 8px;
+      background: var(--accent);
+      color: #fff;
+      font-size: 12px;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+    section p {
+      margin-bottom: 12px;
+    }
+    section p:last-child { margin-bottom: 0; }
+
+    h3 {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--heading);
+      margin: 18px 0 8px;
+    }
+
+    ul {
+      list-style: none;
+      padding-left: 4px;
+    }
+    ul li {
+      padding: 4px 0 4px 20px;
+      position: relative;
+      color: var(--text);
+    }
+    ul li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 13px;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--accent);
+    }
+
+    /* ── Callout ── */
+    .callout {
+      background: var(--surface);
+      border-left: 3px solid var(--accent);
+      border-radius: 0 8px 8px 0;
+      padding: 14px 18px;
+      font-size: 14px;
+      color: #a8acca;
+      margin: 16px 0;
+    }
+
+    /* ── Droits grid ── */
+    .rights-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 10px;
+      margin-top: 14px;
+    }
+    .right-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 12px 14px;
+      font-size: 13px;
+      color: var(--text);
+    }
+    .right-card strong {
+      display: block;
+      color: var(--heading);
+      margin-bottom: 3px;
+      font-size: 13px;
+    }
+
+    /* ── Divider ── */
+    hr {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 0 0 48px;
+    }
+
+    /* ── Footer ── */
+    footer {
+      border-top: 1px solid var(--border);
+      text-align: center;
+      padding: 28px 24px;
+      font-size: 13px;
+      color: var(--muted);
+    }
+    footer a { color: var(--accent); text-decoration: none; }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="badge">🔒 Document légal</div>
+  <h1>Politique de <span>Confidentialité</span></h1>
+  <p class="meta">Serveur SHOP · Nexorya Bot · Dernière mise à jour : juin 2026</p>
+</header>
+
+<main>
+
+  <section>
+    <h2><span class="num">1</span> Introduction</h2>
+    <p>La présente Politique de Confidentialité décrit la manière dont les données personnelles des utilisateurs sont collectées, utilisées et protégées dans le cadre de l'utilisation du serveur Discord <strong>SHOP</strong> et de son système d'abonnements numériques automatisés, opéré via le bot <strong>Nexorya</strong>.</p>
+    <p>En rejoignant le serveur ou en effectuant un achat, vous acceptez les termes de cette politique.</p>
+  </section>
+  <hr>
+
+  <section>
+    <h2><span class="num">2</span> Responsable du traitement</h2>
+    <p>Le traitement des données est assuré par l'opérateur du serveur SHOP. Toute demande relative à vos données doit être soumise via le système de support officiel disponible sur le serveur Discord.</p>
+  </section>
+  <hr>
+
+  <section>
+    <h2><span class="num">3</span> Données collectées</h2>
+    <p>Nous collectons uniquement les données strictement nécessaires au fonctionnement du service :</p>
+    <h3>Données Discord</h3>
+    <ul>
+      <li>Identifiant utilisateur Discord (User ID)</li>
+      <li>Nom d'utilisateur</li>
+      <li>Rôles attribués et historique d'accès</li>
+    </ul>
+    <h3>Données de paiement (via PayPal)</h3>
+    <ul>
+      <li>Identifiant de transaction</li>
+      <li>Statut du paiement</li>
+      <li>Informations de facturation limitées telles que fournies par PayPal</li>
+    </ul>
+    <div class="callout">Aucune coordonnée bancaire complète n'est stockée. Le traitement des paiements est intégralement délégué à PayPal.</div>
+    <h3>Données techniques</h3>
+    <ul>
+      <li>Horodatages des actions (achat, activation de rôle, connexion)</li>
+      <li>Journaux système (automatisation, erreurs, événements de sécurité, anti-raid)</li>
+      <li>Logs de tickets de support</li>
+    </ul>
+  </section>
+  <hr>
+
+  <section>
+    <h2><span class="num">4</span> Finalités du traitement</h2>
+    <p>Les données collectées sont utilisées exclusivement pour :</p>
+    <ul>
+      <li>Fournir les accès numériques achetés (rôles VIP, Premium, Elite)</li>
+      <li>Assigner et gérer automatiquement les rôles et permissions Discord</li>
+      <li>Vérifier et valider les paiements</li>
+      <li>Prévenir la fraude, les abus et les tentatives de contournement</li>
+      <li>Assurer la sécurité et le bon fonctionnement du serveur (anti-raid, modération)</li>
+      <li>Gérer les tickets de support</li>
+    </ul>
+    <p>Aucune exploitation publicitaire ni profilage à des fins commerciales n'est effectuée.</p>
+  </section>
+  <hr>
+
+  <section>
+    <h2><span class="num">5</span> Base juridique (RGPD)</h2>
+    <p>Le traitement de vos données repose sur :</p>
+    <ul>
+      <li><strong>L'exécution du contrat</strong> : livraison des accès numériques commandés</li>
+      <li><strong>L'intérêt légitime</strong> : sécurité du serveur, prévention de la fraude</li>
+      <li><strong>Les obligations légales</strong> le cas échéant</li>
+    </ul>
+  </section>
+  <hr>
+
+  <section>
+    <h2><span class="num">6</span> Partage des données</h2>
+    <p>Nous ne vendons ni ne louons vos données. Elles peuvent être partagées uniquement avec :</p>
+    <ul>
+      <li><strong>PayPal</strong> : dans le cadre du traitement des paiements</li>
+      <li><strong>Discord</strong> : inhérent au fonctionnement de la plateforme</li>
+      <li><strong>Prestataires techniques</strong> éventuels nécessaires à l'automatisation</li>
+      <li><strong>Autorités légales</strong> si la loi l'exige</li>
+    </ul>
+  </section>
+  <hr>
+
+  <section>
+    <h2><span class="num">7</span> Durée de conservation</h2>
+    <p>Les données sont conservées aussi longtemps que nécessaire pour :</p>
+    <ul>
+      <li>Assurer la continuité du service et la gestion des abonnements</li>
+      <li>Respecter les obligations légales ou comptables applicables</li>
+      <li>Prévenir toute tentative de fraude ou d'abus</li>
+    </ul>
+    <p>Les données inactives ou devenues inutiles peuvent être supprimées périodiquement.</p>
+  </section>
+  <hr>
+
+  <section>
+    <h2><span class="num">8</span> Sécurité</h2>
+    <p>Des mesures techniques et organisationnelles raisonnables sont mises en œuvre :</p>
+    <ul>
+      <li>Contrôle d'accès aux données et commandes sensibles</li>
+      <li>Traitement automatisé sécurisé</li>
+      <li>Journalisation et surveillance des événements</li>
+      <li>Système anti-raid actif pour prévenir les intrusions massives</li>
+    </ul>
+    <p>Aucun système ne peut garantir une sécurité absolue.</p>
+  </section>
+  <hr>
+
+  <section>
+    <h2><span class="num">9</span> Droits des utilisateurs</h2>
+    <p>Conformément au RGPD, vous disposez des droits suivants :</p>
+    <div class="rights-grid">
+      <div class="right-card"><strong>Accès</strong>Obtenir une copie de vos données</div>
+      <div class="right-card"><strong>Rectification</strong>Corriger des données inexactes</div>
+      <div class="right-card"><strong>Effacement</strong>Demander la suppression de vos données</div>
+      <div class="right-card"><strong>Limitation</strong>Restreindre le traitement</div>
+      <div class="right-card"><strong>Opposition</strong>Vous opposer au traitement</div>
+      <div class="right-card"><strong>Portabilité</strong>Recevoir vos données dans un format structuré</div>
+    </div>
+    <p style="margin-top:16px">Toute demande doit être soumise via le canal de support officiel sur le serveur Discord.</p>
+  </section>
+  <hr>
+
+  <section>
+    <h2><span class="num">10</span> Traitement automatisé</h2>
+    <div class="callout">L'ensemble des opérations — vérification des paiements, attribution des rôles, gestion des accès, modération — est <strong>entièrement automatisé</strong> via le bot Nexorya. Aucune intervention manuelle n'est requise dans le cadre du fonctionnement standard.</div>
+  </section>
+  <hr>
+
+  <section>
+    <h2><span class="num">11</span> Services tiers</h2>
+    <p>Ce service repose sur les plateformes suivantes, chacune ayant sa propre politique de confidentialité :</p>
+    <ul>
+      <li><strong>Discord</strong> : discord.com/privacy</li>
+      <li><strong>PayPal</strong> : paypal.com/fr/webapps/mpp/ua/privacy-full</li>
+    </ul>
+  </section>
+  <hr>
+
+  <section>
+    <h2><span class="num">12</span> Transferts internationaux</h2>
+    <p>Les données peuvent être traitées dans différents pays en fonction des infrastructures de Discord et PayPal. En utilisant le service, vous consentez à ces transferts.</p>
+  </section>
+  <hr>
+
+  <section>
+    <h2><span class="num">13</span> Mineurs</h2>
+    <p>Ce service est strictement réservé aux utilisateurs âgés de <strong>16 ans ou plus</strong>. En utilisant le service, vous confirmez remplir cette condition. Nous ne collectons pas sciemment de données concernant des utilisateurs de moins de 16 ans. Si de telles données venaient à être identifiées, elles seraient supprimées sans délai.</p>
+  </section>
+  <hr>
+
+  <section>
+    <h2><span class="num">14</span> Responsabilité</h2>
+    <p>Nous déclinons toute responsabilité concernant :</p>
+    <ul>
+      <li>Les pratiques de confidentialité de Discord et PayPal</li>
+      <li>La compromission d'un compte utilisateur par un tiers</li>
+      <li>Les défaillances de services externes</li>
+    </ul>
+  </section>
+  <hr>
+
+  <section>
+    <h2><span class="num">15</span> Modifications</h2>
+    <p>La présente Politique peut être mise à jour à tout moment. La poursuite de l'utilisation du service après toute modification vaut acceptation de la nouvelle version.</p>
+  </section>
+  <hr>
+
+  <section>
+    <h2><span class="num">16</span> Contact</h2>
+    <p>Toute demande doit être formulée via le canal de support officiel du serveur Discord SHOP.</p>
+  </section>
+
+</main>
+
+<footer>
+  <p>Nexorya Bot — Serveur SHOP &nbsp;·&nbsp; <a href="cgu_nexorya.html">Conditions Générales d'Utilisation</a></p>
+</footer>
+
+</body>
+</html>

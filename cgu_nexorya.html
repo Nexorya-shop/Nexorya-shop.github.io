@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CGU — Serveur SHOP · Nexorya</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:        #0e0f13;
+      --surface:   #16181f;
+      --border:    #262933;
+      --accent:    #5865f2;
+      --accent-dim:#3b4299;
+      --text:      #d4d6e0;
+      --muted:     #6b7080;
+      --heading:   #f0f1f5;
+      --white:     #ffffff;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', sans-serif;
+      font-size: 15px;
+      line-height: 1.75;
+      min-height: 100vh;
+    }
+
+    /* ── Header ── */
+    header {
+      border-bottom: 1px solid var(--border);
+      padding: 28px 0 24px;
+      text-align: center;
+    }
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--accent-dim);
+      color: #c7cdf8;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      padding: 4px 12px;
+      border-radius: 99px;
+      margin-bottom: 16px;
+    }
+    header h1 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(26px, 5vw, 38px);
+      color: var(--heading);
+      letter-spacing: -.02em;
+    }
+    header h1 span { color: var(--accent); }
+    .meta {
+      margin-top: 10px;
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    /* ── Layout ── */
+    main {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 56px 24px 80px;
+    }
+
+    /* ── Sections ── */
+    section {
+      margin-bottom: 48px;
+    }
+    section h2 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--heading);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+    .num {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 28px;
+      height: 28px;
+      border-radius: 8px;
+      background: var(--accent);
+      color: #fff;
+      font-size: 12px;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+    section p {
+      margin-bottom: 12px;
+    }
+    section p:last-child { margin-bottom: 0; }
+
+    h3 {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--heading);
+      margin: 18px 0 8px;
+    }
+
+    ul {
+      list-style: none;
+      padding-left: 4px;
+    }
+    ul li {
+      padding: 4px 0 4px 20px;
+      position: relative;
+      color: var(--text);
+    }
+    ul li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 13px;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--accent);
+    }
+
+    /* ── Tableau ── */
+    .table-wrap {
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      overflow: hidden;
+      margin: 16px 0;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+    }
+    thead tr {
+      background: var(--surface);
+    }
+    th {
+      padding: 12px 16px;
+      text-align: left;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: .07em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    td {
+      padding: 12px 16px;
+      border-top: 1px solid var(--border);
+      color: var(--text);
+    }
+    .tier { font-weight: 600; color: var(--heading); }
+    .price { color: var(--accent); font-weight: 600; }
+
+    /* ── Callout ── */
+    .callout {
+      background: var(--surface);
+      border-left: 3px solid var(--accent);
+      border-radius: 0 8px 8px 0;
+      padding: 14px 18px;
+      font-size: 14px;
+      color: #a8acca;
+      margin: 16px 0;
+    }
+
+    /* ── Divider ── */
+    hr {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 0 0 48px;
+    }
+
+    /* ── Footer ── */
+    footer {
+      border-top: 1px solid var(--border);
+      text-align: center;
+      padding: 28px 24px;
+      font-size: 13px;
+      color: var(--muted);
+    }
+    footer a { color: var(--accent); text-decoration: none; }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="badge">⚖ Document légal</div>
+  <h1>Conditions Générales d'<span>Utilisation</span></h1>
+  <p class="meta">Serveur SHOP · Nexorya Bot · Dernière mise à jour : juin 2026</p>
+</header>
+
+<main>
+
+  <section>
+    <h2><span class="num">1</span> Objet et acceptation</h2>
+    <p>Les présentes Conditions Générales d'Utilisation (CGU) régissent l'accès et l'utilisation du serveur Discord <strong>SHOP</strong> ainsi que de ses services numériques automatisés, opérés via le bot <strong>Nexorya</strong>.</p>
+    <p>En rejoignant le serveur ou en effectuant un achat, l'utilisateur reconnaît avoir lu et accepté l'intégralité des présentes CGU. L'ignorance des règles ne peut être invoquée comme défense.</p>
+  </section>
+  <hr>
+
+  <section>
+    <h2><span class="num">2</span> Accès au service</h2>
+    <h3>2.1 Âge requis</h3>
+    <p>L'accès au serveur SHOP est strictement réservé aux utilisateurs âgés de <strong>16 ans ou plus</strong>. Tout utilisateur dont l'âge est inférieur à cette limite sera exclu définitivement et sans préavis.</p>
+    <h3>2.2 Compte Discord</h3>
+    <p>L'utilisation du service nécessite un compte Discord valide, conforme aux Conditions d'utilisation de Discord. L'utilisateur est responsable de la sécurité et de l'utilisation de son compte.</p>
+  </section>
+  <hr>
+
+  <section>
+    <h2><span class="num">3</span> Description du service</h2>
+    <p>Le serveur SHOP propose :</p>
+    <ul>
+      <li>Un accès à des salons et contenus numériques exclusifs</li>
+      <li>Un système d'abonnements à niveaux (VIP, Premium, Elite)</li>
+      <li>Un traitement automatisé des paiements via PayPal</li>
+      <li>Un système de tickets de support</li>
+      <li>Des outils de modération automatisée (anti-raid, gestion des rôles, logs)</li>
+    </ul>
+    <div class="callout">L'ensemble des opérations est <strong>entièrement automatisé</strong> via le bot Nexorya. Aucune intervention manuelle n'est requise dans le cadre du fonctionnement standard.</div>
+  </section>
+  <hr>
+
+  <section>
+    <h2><span class="num">4</span> Abonnements et paiements</h2>
+    <h3>4.1 Offres disponibles</h3>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Niveau</th><th>Prix</th></tr></thead>
+        <tbody>
+          <tr><td class="tier">VIP</td><td class="price">1,99 USD</td></tr>
+          <tr><td class="tier">Premium</td><td class="price">5,99 USD</td></tr>
+          <tr><td class="tier">Elite</td><td class="price">9,99 USD</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Les prix sont libellés en USD, sauf indication contraire. Ils peuvent être modifiés à tout moment.</p>
+    <h3>4.2 Moyen de paiement</h3>
+    <p>Les paiements sont traités exclusivement via <strong>PayPal</strong>. En finalisant un paiement, l'utilisateur confirme être autorisé à effectuer la transaction.</p>
+    <h3>4.3 Livraison</h3>
+    <p>L'accès est accordé <strong>automatiquement et immédiatement</strong> après confirmation du paiement. En cas de délai technique exceptionnel, l'activation peut prendre jusqu'à 24 heures.</p>
+  </section>
+  <hr>
+
+  <section>
+    <h2><span class="num">5</span> Droit de rétractation</h2>
+    <p>Conformément à la réglementation applicable aux contenus numériques à livraison instantanée, <strong>le droit de rétractation est expressément exclu</strong> dès lors que l'accès numérique a été activé.</p>
+    <p>En procédant à l'achat, l'utilisateur reconnaît et accepte cette condition.</p>
+  </section>
+  <hr>
+
+  <section>
+    <h2><span class="num">6</span> Politique de remboursement</h2>
+    <p>Tous les achats sont <strong>définitifs et non remboursables</strong> une fois l'accès accordé. Un remboursement peut être envisagé uniquement dans les cas suivants :</p>
+    <ul>
+      <li>Non-livraison avérée due à une défaillance technique confirmée par les journaux système</li>
+      <li>Double paiement identique confirmé par le système</li>
+    </ul>
+    <p>Toute demande doit être formulée via le support officiel du serveur.</p>
+  </section>
+  <hr>
+
+  <section>
+    <h2><span class="num">7</span> Utilisation du service</h2>
+    <h3>7.1 Accès personnel et non transférable</h3>
+    <p>L'accès acheté est strictement personnel. Il est interdit de partager son accès, de revendre ou redistribuer les contenus, ou d'utiliser plusieurs comptes pour contourner les restrictions.</p>
+    <h3>7.2 Comportements interdits</h3>
+    <ul>
+      <li>Harcèlement, insultes, discriminations ou menaces</li>
+      <li>Spam, flood ou messages répétitifs</li>
+      <li>Publicité non autorisée ou autopublicité</li>
+      <li>Contenu illégal sous quelque forme que ce soit</li>
+      <li>Exploitation sexuelle de mineurs (tolérance zéro)</li>
+      <li>Contenu gore ou violence extrême hors zones autorisées</li>
+      <li>Tentative de contournement du système de paiement ou d'accès</li>
+      <li>Exploitation de failles ou bugs du bot ou du serveur</li>
+      <li>Utilisation de comptes alternatifs pour contourner des sanctions</li>
+    </ul>
+    <h3>7.3 Contenus NSFW</h3>
+    <p>Les contenus NSFW sont partiellement autorisés, <strong>uniquement dans les salons désignés</strong>. Tout contenu NSFW hors de ces espaces est strictement interdit et doit respecter les Conditions de Discord.</p>
+  </section>
+  <hr>
+
+  <section>
+    <h2><span class="num">8</span> Modération et sanctions</h2>
+    <p>La modération est entièrement automatisée via Nexorya et peut inclure, selon la gravité :</p>
+    <ul>
+      <li>Avertissement</li>
+      <li>Suppression de messages</li>
+      <li>Retrait de rôle(s)</li>
+      <li>Mute temporaire</li>
+      <li>Exclusion (ban) temporaire ou définitif</li>
+    </ul>
+    <p>Les violations graves peuvent entraîner un ban immédiat sans avertissement préalable.</p>
+  </section>
+  <hr>
+
+  <section>
+    <h2><span class="num">9</span> Chargebacks et litiges PayPal</h2>
+    <p>Toute contestation de paiement (chargeback) non justifiée auprès de PayPal est considérée comme une tentative de fraude et entraînera :</p>
+    <ul>
+      <li>Suppression immédiate de l'accès au service</li>
+      <li>Ban définitif du serveur</li>
+      <li>Transmission des preuves à PayPal (logs, preuve de livraison, historique d'accès)</li>
+    </ul>
+  </section>
+  <hr>
+
+  <section>
+    <h2><span class="num">10</span> Disponibilité du service</h2>
+    <p>Nous ne garantissons pas une disponibilité ininterrompue du service. Des interruptions temporaires peuvent survenir en raison de maintenance, de problèmes liés à Discord, ou de facteurs externes indépendants de notre volonté.</p>
+  </section>
+  <hr>
+
+  <section>
+    <h2><span class="num">11</span> Limitation de responsabilité</h2>
+    <p>Nous déclinons toute responsabilité concernant :</p>
+    <ul>
+      <li>Les contenus générés par les utilisateurs</li>
+      <li>Les problèmes liés à la plateforme Discord ou à PayPal</li>
+      <li>La perte d'accès résultant d'actions de l'utilisateur</li>
+      <li>Les litiges entre utilisateurs</li>
+      <li>L'utilisation abusive des accès achetés</li>
+    </ul>
+  </section>
+  <hr>
+
+  <section>
+    <h2><span class="num">12</span> Propriété intellectuelle</h2>
+    <p>Les éléments du service (nom, logo, contenus exclusifs) sont la propriété de leurs auteurs respectifs. Toute reproduction, diffusion ou utilisation non autorisée est interdite.</p>
+  </section>
+  <hr>
+
+  <section>
+    <h2><span class="num">13</span> Modification des CGU</h2>
+    <p>Les présentes CGU peuvent être mises à jour à tout moment sans préavis. La poursuite de l'utilisation du service après modification vaut acceptation des nouvelles conditions.</p>
+  </section>
+  <hr>
+
+  <section>
+    <h2><span class="num">14</span> Droit applicable</h2>
+    <p>Les présentes CGU sont soumises au droit applicable dans le pays de résidence de l'opérateur. En cas de litige, les parties s'engagent à rechercher une résolution amiable avant tout recours judiciaire.</p>
+  </section>
+  <hr>
+
+  <section>
+    <h2><span class="num">15</span> Contact et support</h2>
+    <p>Toute demande, réclamation ou question doit être adressée via le canal de support officiel disponible sur le serveur Discord SHOP.</p>
+  </section>
+  <hr>
+
+  <section>
+    <h2><span class="num">16</span> Acceptation finale</h2>
+    <div class="callout">En restant membre du serveur ou en effectuant un achat, vous confirmez avoir lu, compris et accepté l'intégralité des présentes Conditions Générales d'Utilisation.</div>
+  </section>
+
+</main>
+
+<footer>
+  <p>Nexorya Bot — Serveur SHOP &nbsp;·&nbsp; <a href="politique_confidentialite_nexorya.html">Politique de Confidentialité</a></p>
+</footer>
+
+</body>
+</html>
